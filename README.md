@@ -1,21 +1,21 @@
-Terraform Multi-Environment Setup with Workspaces
+#Terraform Multi-Environment Setup with Workspaces
 This project demonstrates how to manage multiple Azure environments (Dev and Test) using a single Terraform codebase. By utilizing Terraform Workspaces and Variables, the architecture remains "DRY" (Don't Repeat Yourself), ensuring consistency across environments while isolating state files.
 
-🚀 Project Objectives
+#🚀 Project Objectives
 Implement dynamic resource naming using terraform.workspace.
 
 Manage infrastructure variables for Azure Resource Groups and Virtual Networks.
 
 Demonstrate environment isolation through state management.
 
-🛠️ Tech Stack
+##🛠️ Tech Stack
 Cloud Provider: Azure
 
 IaC Tool: Terraform
 
 Version Control: Git
 
-📂 File Structure
+##📂 File Structure
 main.tf: Defines the Azure Resource Group and Virtual Network.
 
 variables.tf: Declares input variables for naming, location, and IP addressing.
@@ -37,5 +37,6 @@ terraform apply -auto-approve
 PowerShell
 terraform workspace new test
 terraform apply -auto-approve
-🧠 Why Workspaces?
+##🧠 Why Workspaces?
+Workspaces allow you to reuse the same configuration files for multiple environments, which eliminates "configuration drift" and ensures that the Test environment is an exact replica of Dev without the need to manually copy or maintain multiple sets of files.
 Workspaces are superior to duplicate folders because they allow you to reuse the exact same code for different stages of the infrastructure lifecycle. This reduces manual errors, ensures that "Test" is a true mirror of "Dev," and simplifies updates across the entire infrastructure.
